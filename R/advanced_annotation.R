@@ -89,6 +89,7 @@ advanced_annotation <- function(peak_table,
                                 network_type = "unsigned",
                                 redundancy_filtering = TRUE,
                                 outloc = tempdir(),
+                                pm_checkmode = NA,
                                 n_workers = parallel::detectCores()) {
   if (is.null(adduct_table)) {
     adduct_table <- sample_adduct_table
@@ -214,7 +215,7 @@ advanced_annotation <- function(peak_table,
     adduct_weights = adduct_weights,
     db_name = "HMDB",
     max_diff_rt = time_tolerance,
-    pathwaycheckmode = "pm"
+    pathwaycheckmode = pm_checkmode
   )
   # ----------------------------
 
